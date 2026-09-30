@@ -1,0 +1,113 @@
+<div class="card">
+<h1>Cadastrar Diretor</h1>
+<form action="/diretores" method="POST" >
+
+    <div>
+        <label>Nome:</label>
+        <input type="text" name="nome">
+    </div>
+  <br>
+    <div>
+        <label>Ano de nascimento:</label>
+        <input type="number" name="anoNascimento">
+    </div>
+  <br>
+    <div>
+        <label>Nacionalidade:</label>
+        <input type="text" name="nacionalidade">
+    </div>
+  <br>
+    <div>
+        <label>Filmes dirigidos:</label>
+        <input type="text" name="filmesDirigidos">
+    </div>
+  <br>
+    <button type="submit">Salvar</button>
+
+</form>
+</div>
+
+<div class="modoEscuro">
+    <a href="/diretores2/cadastrar2">Modo Escuro</a>
+</div> 
+
+<div class="Voltar">
+    <a href="/diretores">Voltar</a>
+</div> 
+
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background: linear-gradient(135deg, #008080, #ffffff, #008080);
+        color: #222;
+        margin: 0;
+        padding: 30px;
+    }
+    .modoEscuro {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+    h1 {
+        color: #222;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .card {
+        background: linear-gradient(135deg, #008080, #ffffff, #008080);
+        padding: 25px;
+        border: 2px solid #008080;
+        border-radius: 15px;
+        width: 300px;
+        box-shadow: 0 6px 12px #ddd;
+        margin: 30px auto;
+}
+    .card h2 {
+        text-align: center;
+        color: #005555;
+}
+    .card label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    .card input,
+    .card select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #008080;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .card button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        background: #008080;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    a {
+        background: white;
+        color: #222;
+        padding: 12px 20px;
+        margin: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background: #eee;
+    }
+</style>

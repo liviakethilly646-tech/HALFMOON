@@ -1,0 +1,130 @@
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<div class="container">
+
+  {{!-- <div id="meuAlerta" class="alert alert-success d-flex align-items-center mb-3" role="alert">
+  <i class="fa-solid fa-circle-check me-2"></i>
+  <div>
+    Cadastro realizado com sucesso!
+  </div>
+  </div> --}}
+
+<h1>Lista de Filmes</h1>
+
+<a href="/filmes2/cadastrar2">
+  Cadastrar Filme
+</a>
+
+<hr>
+
+<ul>
+
+  {{#each filmes}}
+
+    <li style="
+        display: block;
+        background: white;
+        border: 2px solid #008080;
+        padding: 15px;
+        margin: 10px auto;
+        border-radius: 15px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 6px 12px #ddd;
+        color: black;
+    ">
+      {{this.nome}} - {{this.ano}}
+      <br>
+      <a href="/filmes2/{{this.id}}/editar2" class="editar">
+        <i class="fa-solid fa-pen-to-square"></i>Editar
+      </a>
+    </li>
+
+  {{/each}}
+
+</ul>
+</div>
+<div class="modoClaro">
+    <a href="/filmes">Modo Claro</a>
+</div> 
+
+<div class="Voltar">
+    <a href="/halfmoon">Voltar</a>
+</div> 
+
+
+<style>
+    .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    {{!-- .alert-fade {
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    } --}}
+
+    body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #000000, #008080, #000000);
+    color: white;
+    margin: 0;
+    padding: 30px;
+  }
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 18px;
+    color: #000000;
+}
+
+a {
+    display: inline-block;
+    background: white;
+    color: #000000;
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+a:hover {
+    background: #eee;
+}
+.modoClaro {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+.editar{
+  color: #008080;
+  text-decoration: none;
+}
+.editar:hover{
+  color:#008080;
+}
+</style> 
+
+{{!-- <script>
+  setTimeout(() => {
+    const alerta = document.getElementById('meuAlerta');
+    if (alerta) {
+      alerta.classList.add('alert-fade'); 
+      setTimeout(() => alerta.remove(), 500);
+    }
+  }, 3000); 
+</script> --}}
+

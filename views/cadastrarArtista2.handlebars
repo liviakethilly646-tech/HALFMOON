@@ -1,0 +1,127 @@
+<h1>Cadastrar Artista</h1>
+
+<div class="card">
+<form action="/artistas2" method="post">
+
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome">
+  </div>
+
+  <br>
+
+  <div>
+    <label>Ano de nascimento:</label>
+    <input type="number" name="anoNascimento">
+  </div>
+
+  <br>
+
+  <div>
+    <label>Nome artístico:</label>
+    <input type="text" name="nomeArtistico">
+  </div>
+
+  <br>
+
+  <button type="submit">Salvar</button>
+
+</form>
+</div>
+
+<div class="modoClaro">
+    <a href="/artistas/cadastrar">Modo Claro</a>
+</div> 
+
+<div class="Voltar">
+    <a href="/artistas2">Voltar</a>
+</div> 
+
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background: linear-gradient(135deg, #000000, #008080, #000000);
+        color: #222;
+        margin: 0;
+        padding: 30px;
+    }
+    .modoClaro{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+    h1 {
+      color: white;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(135deg, #000000, #008080, #000000);
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 6px 12px #ddd;
+    margin: 30px auto;
+}
+
+    .card label{
+      color: white;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .card input,
+    .card select{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #008080;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .card select[multiple]{
+        height: 100px;
+    }
+
+    .card button{
+        background: #008080;
+        color: white;
+        padding: 12px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background: #006666;
+    }
+
+    a {
+        background: white;
+        color: rgb(7, 7, 7);
+        padding: 12px 20px;
+        margin: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background: #eee;
+    }
+
+</style>

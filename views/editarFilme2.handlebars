@@ -1,0 +1,133 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="card">
+
+    <h1>Editar Filme</h1>
+
+    <a href="/filmes2">Voltar para Filmes</a>
+
+    <form action="/filmes2/{{filme.id}}?_method=PUT" method="POST">
+
+        <label>Nome do Filme:</label>
+        <input type="text" name="nome" value="{{filme.nome}}" required>
+
+        <label>Ano:</label>
+        <input type="number" name="ano" value="{{filme.ano}}" required>
+
+        <button type="submit">
+            Salvar Alterações
+        </button>
+
+    </form>
+
+    <form action="/filmes2/{{filme.id}}?_method=DELETE" method="POST">
+        <button class="btn btn-danger excluir">
+            <i class="fa-solid fa-trash-can"></i>
+            Excluir Filme
+        </button>
+    </form>
+
+</div>
+
+<div class="modoClaro">
+    <a href="/filmes/{{filme.id}}/editar">Modo Claro</a>
+</div> 
+
+<div class="Voltar">
+    <a href="/filmes2">Voltar</a>
+</div> 
+
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background: linear-gradient(135deg, #000000, #008080, #000000);
+        color: #222;
+        margin: 0;
+        padding: 30px;
+    }
+    h1 {
+        color: white;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(135deg, #000000, #008080, #000000);
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 6px 12px #ddd;
+    margin: 30px auto;
+}
+
+    .card label{
+      color: white;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .card input,
+    .card select{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #008080;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .card select[multiple]{
+        height: 100px;
+    }
+
+    .card button{
+        background: #008080;
+        color: white;
+        padding: 12px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+ .card button:hover{
+        background: #006666;
+    }
+
+    .card button.excluir {
+    background: #c0392b;
+}
+
+.card button.excluir:hover {
+    background: #922b21;
+}
+
+    a {
+        display: inline-block;
+        background: white;
+        color: #222;
+        padding: 12px 20px;
+        margin: 8px;
+        border-radius: 15px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px #ddd;
+    }
+
+    .modoClaro {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+</style>

@@ -1,0 +1,126 @@
+<link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/halfmoon.min.css" rel="stylesheet">
+<h1>Cadastrar Filme</h1>
+
+<div class="card">
+<form action="/filmes" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label>Ano:</label>
+        <input type="number" name="ano" required>
+
+        <label>Artistas:</label>
+        <select name="artistas" multiple>
+            {{#each artistas}}
+                <option value="{{this.id}}">{{this.nome}}</option>
+            {{/each}}
+        </select>
+
+        <label>Diretor:</label>
+        <select name="diretorId">
+            <option value="">Selecione um diretor</option>
+            {{#each diretores}}
+                <option value="{{this.id}}">{{this.nome}}</option>
+            {{/each}}
+        </select>
+
+        <button type="submit">Salvar Filme</button>
+    </form>
+</div>
+
+<div class="modoEscuro">
+    <a href="/filmes2/cadastrar2">Modo Escuro</a>
+</div> 
+
+<div class="Voltar">
+    <a href="/filmes">Voltar</a>
+</div> 
+
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background: linear-gradient(135deg, #008080, white,#008080);
+        color: #222;
+        margin: 0;
+        padding: 30px;
+    }
+    .modoEscuro {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+    h1 {
+      color:white;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(135deg, #008080, white, #008080);
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 6px 12px #ddd;
+    margin: 30px auto;
+}
+
+    .card label{
+      color: white;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .card input,
+    .card select{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #008080;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .card select[multiple]{
+        height: 100px;
+    }
+
+    .card button{
+        background: #008080;
+        color: white;
+        padding: 12px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+ .card button: hover{
+        background: #006666;
+    }
+
+    a {
+        background: white;
+        color: black;
+        padding: 12px 20px;
+        margin: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background: #eee;
+    }
+</style>
