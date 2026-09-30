@@ -40,8 +40,8 @@ app.get('/filmes', async (req, res) => {
 
     res.render('filmes', {
       filmes: filmes.map(filme => filme.toJSON()),
-      mensagem: req.query.mensagem, // Lida da URL
-      tipo: req.query.tipo          // Lida da URL
+      mensagem: req.query.mensagem, 
+      tipo: req.query.tipo       
     });
 
   } catch (erro) {
