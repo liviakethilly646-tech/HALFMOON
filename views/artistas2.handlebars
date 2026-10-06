@@ -1,6 +1,14 @@
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<div class="container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet">
+<href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<div id="meuAlerta"
+     role="alert"
+     style="display: none; background: #d1e7dd; color: #0f5132; padding: 12px; border-radius: 8px;">
+  Cadastro realizado com sucesso!
+</div>
+
+<div class="card">
 
 <h1>Artistas</h1>
 
@@ -24,6 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   {{/each}}
 </ul>
 </div>
+
 <div class="modoClaro">
     <a href="/artistas">Modo Claro</a>
 </div> 
@@ -33,20 +42,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 <style>
-    .container {
+    .card {
+    font-family: 'Nunito', sans-serif;
+    background:  linear-gradient(135deg, #000000, #008080, #000000);
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 500px;
+    max-width: 90%;
+    padding: 25px;
+    margin: 70px auto 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    }
-    body {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+  }
+  body{
     font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, #000000, #008080, #000000);
-    color: #222;
-    margin: 0;
-    padding: 30px;
-}
+    background:  linear-gradient(135deg, #000000, #008080, #000000);
+  }
 
 h1 {
   color: white;
@@ -58,6 +73,10 @@ p {
     font-size: 18px;
     color: rgb(0, 0, 0);
 }
+ .alert-fade {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  }
 
 a {
     display: inline-block;
@@ -84,11 +103,23 @@ a:hover {
     top: 20px;
     left: 20px;
   }
-.editar{
-  color: #008080;
-  text-decoration: none;
-}
-.editar:hover{
-  color:#008080;
-}
-</style> 
+</style>
+
+<script>
+  const alerta = document.getElementById('meuAlerta');
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('cadastrado') === '1') {
+    alerta.style.display = 'block';
+
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname
+    );
+
+    setTimeout(() => {
+      alerta.style.display = 'none';
+    }, 3000);
+  }
+</script>
