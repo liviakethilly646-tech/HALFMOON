@@ -1,6 +1,14 @@
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<div class="container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet">
+<href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<div class="card">
+
+<div id="meuAlerta"
+     role="alert"
+     style="display: none; background: #d1e7dd; color: #0f5132; padding: 12px; border-radius: 8px;">
+  Cadastro realizado com sucesso!
+</div>
 
 
 <h1>Diretores</h1>
@@ -35,30 +43,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </div> 
 
 <style>
-    .container {
+    .card {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #008080, white, #008080);
+    border: 2px solid #008080;
+    border-radius: 20px;
+    width: 500px;
+    max-width: 90%;
+    padding: 25px;
+    margin: 70px auto 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    }
-    body {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+  }
+  body{
     font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, #008080, #ffffff, #008080);
-    color: #222;
-    margin: 0;
-    padding: 30px;
-}
-
-h1 {
+    background: linear-gradient(135deg, #008080, white, #008080);
+  }
+  h1 {
     font-size: 36px;
     font-weight: 700;
-}
+  }
 
-p {
+  p {
     font-size: 18px;
     color: #777;
-}
+  }
+ .alert-fade {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  }
 
 a {
     display: inline-block;
@@ -93,3 +110,22 @@ a:hover {
   color:#008080;
 }
   </style> 
+
+  <script>
+  const alerta = document.getElementById('meuAlerta');
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('cadastrado') === '1') {
+    alerta.style.display = 'block';
+
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname
+    );
+
+    setTimeout(() => {
+      alerta.style.display = 'none';
+    }, 3000);
+  }
+</script>
