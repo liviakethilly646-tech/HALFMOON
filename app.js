@@ -40,8 +40,8 @@ app.get('/filmes', async (req, res) => {
 
     res.render('filmes', {
       filmes: filmes.map(filme => filme.toJSON()),
-      mensagem: req.query.mensagem, 
-      tipo: req.query.tipo       
+      mensagem: req.query.mensagem, // Lida da URL
+      tipo: req.query.tipo          // Lida da URL
     });
 
   } catch (erro) {
@@ -92,7 +92,7 @@ app.post('/filmes', async (req, res) => {
       await filme.setArtistas(artistas);
     }
 
-    res.redirect('/filmes');
+    res.redirect('/filmes?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR FILME:');
@@ -254,7 +254,7 @@ app.post('/diretores', async (req, res) => {
       filmesDirigidos: filmesDirigidos,
     });
 
-    res.redirect('/diretores');
+    res.redirect('/diretores?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR DIRETOR:');
@@ -333,7 +333,7 @@ app.post('/artistas', async (req, res) => {
       nomeArtistico: nomeArtistico
     });
 
-    res.redirect('/artistas');
+    res.redirect('/artistas?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR ARTISTA:');
@@ -434,6 +434,7 @@ app.get('/filmes2/cadastrar2', async (req, res) => {
 });
 
 
+
 app.post('/filmes2', async (req, res) => {
   try {
     const nome = req.body.nome;
@@ -451,7 +452,7 @@ app.post('/filmes2', async (req, res) => {
       await filme.setArtistas(artistas);
     }
 
-    res.redirect('/filmes2');
+    res.redirect('/filmes2?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR FILME:');
@@ -611,7 +612,7 @@ app.post('/diretores2', async (req, res) => {
       filmesDirigidos: filmesDirigidos,
     });
 
-    res.redirect('/diretores2');
+    res.redirect('/diretores2?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR DIRETOR:');
@@ -691,7 +692,7 @@ app.post('/artistas2', async (req, res) => {
       nomeArtistico: nomeArtistico
     });
 
-    res.redirect('/artistas2');
+    res.redirect('/artistas2?cadastrado=1');
 
   } catch (erro) {
     console.error('ERRO AO CADASTRAR ARTISTA:');
